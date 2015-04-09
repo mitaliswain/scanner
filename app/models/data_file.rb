@@ -1,7 +1,7 @@
 class DataFile < ActiveRecord::Base
     attr_accessor :upload
 
-    RAILS_CAR_IMAGES = 'app/assets/images/' 
+    RAILS_CAR_IMAGES = 'public/assets/images/' 
     
   def self.save_file(upload)   
     
