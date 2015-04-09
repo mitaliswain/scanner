@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   
   namespace :scanning do
-    get '' ,  action: 'index' 
+    get '/' ,  action: 'index' 
+    post '/' ,  action: 'create'
  end
   
   # The priority is based upon order of creation: first created -> highest priority.

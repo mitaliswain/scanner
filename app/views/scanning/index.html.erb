@@ -1,4 +1,8 @@
  <div>
 	 <label style="width: 800px; font-size: 1em"> Scan the Photo </label>
- 	<input type="file" accept="image/*" capture="camera" style="width: 800px; font-size: 1em">
+<%=form_tag("/scanning", multipart:true) do %>
+  <input type="file" id="upload_datafile" name="upload[datafile]" accept="image/*" capture> <p/>
+  <input type="submit" value="Upload">
+<%end%>
  </div>
+ 
