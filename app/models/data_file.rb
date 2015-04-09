@@ -22,6 +22,6 @@ class DataFile < ActiveRecord::Base
       File.open(image_root + "#{name_folder}/" + new_file_name_with_type, "wb")  do |f|  
         f.write(file) 
       end
-    "#{name_folder}/" + new_file_name_with_type
+      new_name_file.to_s + '/' + new_file_name_with_type 
   end
 end
