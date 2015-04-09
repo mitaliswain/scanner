@@ -1,1 +1,13 @@
-<img alt="1428618854" src="/assets/images/<%= @image %>" />
+<head>
+<style>
+.thumbnail {
+    float: left;
+    width: 110px;
+    height: 90px;
+    margin: 5px;
+}
+</style>
+</head>
+<% @dir_list.each do |image| %> 
+	<img class="thumbnail" 1428618854" src="/assets/images/<%= image %>" />
+<%end%>	

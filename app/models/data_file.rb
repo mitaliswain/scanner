@@ -17,11 +17,11 @@ class DataFile < ActiveRecord::Base
 
     image_root = "#{RAILS_CAR_IMAGES}"
     
-    Dir.mkdir(image_root + "#{name_folder}");
-      p image_root + "#{name_folder}/" + new_file_name_with_type
-      File.open(image_root + "#{name_folder}/" + new_file_name_with_type, "wb")  do |f|  
+    #Dir.mkdir(image_root + "#{name_folder}");
+      File.open(image_root + new_file_name_with_type, "wb")  do |f|  
         f.write(file) 
       end
-      new_name_file.to_s + '/' + new_file_name_with_type 
+      
+      new_file_name_with_type 
   end
 end
