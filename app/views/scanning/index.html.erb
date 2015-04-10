@@ -1,9 +1,21 @@
- <div>
+<script>
+$( document ).ready(function() {	
 
+	$('#upload_datafile').change(function() {
+	  $('#scan').submit();
+	});
+	
+	$("#upload").click(function () {
+    	$("#upload_datafile").trigger('click');
+	});
+});	
+</script>
+
+ <div>
 <label style="width: 80%; font-size: 1em"> Scan the Photo </label>
-<%=form_tag("/scanning", multipart:true) do %>
-  <input type="file" id="upload_datafile" name="upload[datafile]" accept="image/*" capture> <p/>
-  <input type="submit" value="Upload">
+<%=form_tag("/scanning", multipart:true, id: 'scan') do %>
+  <img src="/assets/images/camera.png" id="upload" style="cursor:pointer" />	
+  <input type="file" id="upload_datafile" name="upload[datafile]" accept="image/*" capture style="display: none"> <p/>
 <%end%>
  </div>
  
