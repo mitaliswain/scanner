@@ -14,7 +14,7 @@ $( document ).ready(function() {
  <div>
 <label style="width: 80%; font-size: 1em"> Scan the Photo </label>
 <%=form_tag("/scanning", multipart:true, id: 'scan') do %>
-  <img src="/assets/images/camera.png" id="upload" style="cursor:pointer" />	
+  <img src="/assets/images/camera.png" id="upload" style="cursor:pointer" class="thumbnail"/>	
   <input type="file" id="upload_datafile" name="upload[datafile]" accept="image/*" capture style="display: none"> <p/>
 <%end%>
  </div>
