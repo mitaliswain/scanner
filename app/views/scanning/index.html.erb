@@ -1,7 +1,22 @@
-<head>
+<body ng-app="fitting_room" >
 
-</style>
-</head>
-<% @dir_list.each do |image| %> 
-	<img class="thumbnail" src="/assets/images/<%= image %>" />
-<%end%>	
+        <div id="FittingRoomCtrl" ng-controller="FittingRoomCtrl">
+        	<div style="width: 400px; height: 500px">
+        		
+	        	<div id="biggerImage" style="float: left; width: 100%; height: 60%; margin: 4px"> 
+	        		<img ng-src="assets/images/{{clicked_photo}}" style="max-height:100%; max-width:100%;" >
+	        	</div>	
+	        	
+	        	<div style="width: 100%; height: 40%; float: left">		
+		        	<div class="row" >
+		        		<div ng-repeat="item in items">
+						  <div class="col-xs-6 col-md-3"  ng-click="clicked(item)" >
+						    <div class="thumbnail" >	
+						      <img src="assets/images/11.jpg" ng-src="assets/images/{{item}}">
+						    </div>
+						  </div>
+						</div>  
+		        	</div>
+		        </div>	
+	     </div>   
+</body>        	

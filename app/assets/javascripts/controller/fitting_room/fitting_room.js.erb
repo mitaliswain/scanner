@@ -1,0 +1,46 @@
+fitting.controller('FittingRoomCtrl', function ($scope, $http,  $location, $filter, $modal, $q, UserService) {
+
+    $scope.last_status = 'Created';
+    $scope.lastitem = {};
+    $scope.detail  = {}
+    $scope.header  = {}
+    $scope.expand = 0
+    $scope.squeeze = 100
+    $scope.search_choice = {value: 'shipment_nbr', text: 'Shipment Number'}
+
+    $scope.search_items = [
+	    {value: 'shipment_nbr', text: 'Shipment Number'},
+    	{value: 'purchase_order_nbr', text: 'Purchase Order Number'}
+ 	 ]; 
+
+    $scope.choose = function(choice) {
+    	$scope.search_choice = choice;
+    	$scope.shipment_list = []
+    	angular.forEach($scope.items, function(item) {
+           	$scope.shipment_list.push(item["shipment_header"][$scope.search_choice.value]);
+        });
+    }
+    
+   var url = '/scanning.json?barcode=' + '01234' 
+
+   var reload_modal_close =  function(){
+       $scope.reload();
+   }
+	
+   $scope.clicked  =  function(clicked_photo){
+       $scope.clicked_photo = clicked_photo;
+   }
+	
+
+    $scope.reload = function() {
+
+        $http.get(url).success(function(data) {
+            $scope.items = data;
+            $scope.clicked_photo = data[0]
+
+        });
+
+    };
+
+    $scope.reload();
+});
