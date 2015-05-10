@@ -1,4 +1,4 @@
-fitting.controller('FittingRoomCtrl', function ($scope, $http,  $location, $filter, $modal, $q, UserService) {
+fitting.controller('FittingRoomCtrl', [function ($scope, $http,  $location, $filter, $modal, $q, UserService) {
 
     $scope.last_status = 'Created';
     $scope.lastitem = {};
@@ -43,4 +43,4 @@ fitting.controller('FittingRoomCtrl', function ($scope, $http,  $location, $filt
     };
 
     $scope.reload();
-});
+}]);
