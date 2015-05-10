@@ -28,7 +28,10 @@ fitting.controller('FittingRoomCtrl', ['$scope', '$http',  '$location', '$filter
    }
 	
    $scope.clicked  =  function(clicked_photo){
+   	
+   	if $scope.clicked_photo == nil {
        $scope.clicked_photo = clicked_photo;
+      } 
    }
 	
 
