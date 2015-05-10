@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   namespace :scanning do
+    get '/capture' , action: 'capture'
     get '/' ,  action: 'index' 
     post '/' ,  action: 'create'
  end

@@ -3,7 +3,7 @@ class DataFile < ActiveRecord::Base
 
     RAILS_CAR_IMAGES = 'public/assets/images/' 
     
-  def self.save_file(upload)   
+  def self.save_file(barcode, upload)   
     
 
     
@@ -11,7 +11,7 @@ class DataFile < ActiveRecord::Base
     file = upload['datafile'].read    
 
     file_type = file_name.split('.').last
-    new_name_file = Time.now.to_i
+    new_name_file = barcode.to_s + '-' + Time.now.to_i.to_s
     name_folder = new_name_file
     new_file_name_with_type = "#{new_name_file}." + file_type
 

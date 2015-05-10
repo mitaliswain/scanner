@@ -1,21 +1,7 @@
-<script>
-$( document ).ready(function() {	
+<head>
 
-	$('#upload_datafile').change(function() {
-	  $('#scan').submit();
-	});
-	
-	$("#upload").click(function () {
-    	$("#upload_datafile").trigger('click');
-	});
-});	
-</script>
-
- <div>
-<label style="width: 80%; font-size: 1em"> Scan the Photo </label>
-<%=form_tag("/scanning", multipart:true, id: 'scan') do %>
-  <img src="/assets/images/camera.png" id="upload" style="cursor:pointer" class="thumbnail"/>	
-  <input type="file" id="upload_datafile" name="upload[datafile]" accept="image/*" capture style="display: none"> <p/>
-<%end%>
- </div>
- 
+</style>
+</head>
+<% @dir_list.each do |image| %> 
+	<img class="thumbnail" src="/assets/images/<%= image %>" />
+<%end%>	
