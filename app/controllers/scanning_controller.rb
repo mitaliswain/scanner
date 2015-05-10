@@ -3,9 +3,11 @@ class ScanningController < ApplicationController
   
   def index
       image_root = 'public/assets/images/'
-      p params[:barcode]
      @dir_list = []
       Dir.foreach(image_root) {|dir|  @dir_list << dir if (dir != '.' && dir != '..')  && (dir[0..4] == params[:barcode]) }
+      
+      @dir_list = ['gap_fotor.jpg'] if @dir_list.empty?
+      p @dir_list
       
     respond_to do |format|
       format.html 
