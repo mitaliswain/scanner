@@ -5,7 +5,7 @@ class ScanningController < ApplicationController
       image_root = 'public/assets/images/'
       p params[:barcode]
      @dir_list = []
-      Dir.foreach(image_root) {|dir|  @dir_list << dir if (dir != '.' && dir != '..')} # && (dir[0..4] == params[:barcode]) }
+      Dir.foreach(image_root) {|dir|  @dir_list << dir if (dir != '.' && dir != '..')  && (dir[0..4] == params[:barcode]) }
       
     respond_to do |format|
       format.html 
