@@ -8,7 +8,9 @@ class ScanningController < ApplicationController
             
       @dir_list = ['gap_Fotor.jpg'] if @dir_list.empty?
       
-      @dir_list = @dir_list.sort
+      #@dir_list = @dir_list.sort
+      
+      @dir_list = @dir_list.sort_by! { |s| -s.length }
       
     respond_to do |format|
       format.html 
