@@ -7,7 +7,7 @@
 		        	<div id="biggerImage" class="card" style="width: 100%; height: 60%;"> 
 		        		<div style="width:80%; height:100%; float: left">
 		        			<span >
-		        				<img ng-src="assets/images/{{clicked_photo}}"  style="margin:10px;  width:460px; max-width:460px; height: 480px; max-height: 480px; -webkit-transform: rotate(90deg)" >
+		        				<img ng-src="assets/images/{{clicked_photo}}"  style="width:460px; max-width:460px; height: 400px; max-height: 400px; -webkit-transform: rotate(90deg)" >
 		        			</span>
 		        		</div> 
 		        		
@@ -31,7 +31,7 @@
 		        	<div style="width: 100%; height: 30%; float: left; margin-top: 10px" >		
 			        	<div >
 			        		<div ng-repeat="item in items">
-							  <div  ng-click="clicked(item)" style="float: left">	
+							  <div  ng-click="clicked(item)" style="float: left; margin-top: 10px">	
 							     <img src="assets/images/gap_Fotors.jpg" ng-src="assets/images/{{item}}" style="margin-right: 1px; width: 140px; display: block; -webkit-transform: rotate(90deg);">
 							  </div>
 							</div>  
