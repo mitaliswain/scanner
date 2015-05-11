@@ -6,6 +6,7 @@ fitting.controller('FittingRoomCtrl', ['$scope', '$http',  '$location', '$filter
     $scope.header  = {}
     $scope.expand = 0
     $scope.squeeze = 100
+    $scope.rooom_barcode = $location.search().warehouse;
     $scope.search_choice = {value: 'shipment_nbr', text: 'Shipment Number'}
 
     $scope.search_items = [
@@ -21,7 +22,7 @@ fitting.controller('FittingRoomCtrl', ['$scope', '$http',  '$location', '$filter
         });
     }
     
-   var url = '/scanning.json?barcode=' + '01234' 
+   var url = '/scanning.json?barcode=' + $scope.rooom_barcode
 
    var reload_modal_close =  function(){
        $scope.reload();
