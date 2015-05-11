@@ -24,4 +24,12 @@ class DataFile < ActiveRecord::Base
       
       new_file_name_with_type 
   end
+  
+  def self.delete_file (file_list)
+    image_root = "#{RAILS_CAR_IMAGES}"
+    file_list.each do |file|
+      File.delete(image_root + file)  
+    end
+    
+  end
 end

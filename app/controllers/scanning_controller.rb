@@ -28,4 +28,13 @@ class ScanningController < ApplicationController
     
   end
   
+  def destroy
+      image_root = 'public/assets/images/'
+      @dir_list = []
+      Dir.foreach(image_root) {|dir|  @dir_list << dir if (dir != '.' && dir != '..')  && (dir.to_s.starts_with?(params[:barcode].to_s)) }
+      DataFile.delete_file(@dir_list)
+      
+      render :json => @dir_list.to_json 
+  end
+  
 end

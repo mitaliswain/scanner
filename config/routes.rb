@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get '/capture' , action: 'capture'
     get '/' ,  action: 'index' 
     post '/' ,  action: 'create'
+    get '/destroy' ,  action: 'destroy'
  end
   
   # The priority is based upon order of creation: first created -> highest priority.
