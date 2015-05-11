@@ -28,10 +28,7 @@ fitting.controller('FittingRoomCtrl', ['$scope', '$http',  '$location', '$filter
    }
 	
    $scope.clicked  =  function(clicked_photo){
-   	
-   	if ($scope.clicked_photo == null) {
-       $scope.clicked_photo = clicked_photo;
-      } 
+      $scope.clicked_photo = clicked_photo;
    }
 	
 
@@ -39,8 +36,9 @@ fitting.controller('FittingRoomCtrl', ['$scope', '$http',  '$location', '$filter
 
         $http.get(url).success(function(data) {
             $scope.items = data;
-            $scope.clicked_photo = data[0]
-
+            if ($scope.clicked_photo == null) {
+            	$scope.clicked_photo = data[0]
+			}
         });
 
     };

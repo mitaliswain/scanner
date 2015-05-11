@@ -1,22 +1,52 @@
 <body ng-app="fitting_room" >
 
         <div id="FittingRoomCtrl" ng-controller="FittingRoomCtrl">
-        	<div style="width: 400px; height: 500px">
-        		
-	        	<div id="biggerImage" style="float: left; width: 100%; height: 60%; margin: 4px"> 
-	        		<img ng-src="assets/images/{{clicked_photo}}"   style="max-height:100%; max-width:100%;-webkit-transform: rotate(90deg);" >
-	        	</div>	
-	        	
-	        	<div style="width: 100%; height: 40%; float: left">		
-		        	<div class="row" >
-		        		<div ng-repeat="item in items">
-						  <div class="col-xs-6 col-md-3"  ng-click="clicked(item)" >
-						    <div class="thumbnail" >	
-						      <img src="assets/images/camera.png" ng-src="assets/images/{{item}}" style="-webkit-transform: rotate(90deg);">
-						    </div>
-						  </div>
-						</div>  
-		        	</div>
-		        </div>	
-	     </div>   
+        	<div style="width: 1000px;">
+	        	<div style="float:left; width: 60%; height: 800px; margin-top: 20px; margin-left: 40px; border-style: solid ; border-width: 1px">
+	        		
+		        	<div id="biggerImage" class="card" style="width: 100%; height: 60%;"> 
+		        		<div style="width:80%; height:100%; float: left">
+		        			<span >
+		        				<img ng-src="assets/images/{{clicked_photo}}"  style="margin:10px;  width:460px; max-width:460px; height: 480px; max-height: 480px; -webkit-transform: rotate(90deg)" >
+		        			</span>
+		        		</div> 
+		        		
+		        		<div style="width:20%; height:100%; padding-top:40px; float: left;">
+		        			<div style="width:40px; height:40px; margin-bottom: 40px">
+		        				<img src="assets/images/like.jpg" class="right-side-image"> 
+		        			</div>
+		        			<div style="width:40px; height:40px; margin-bottom: 40px; margin-right: 4px">
+		        				<img src="assets/images/dislike.jpg" class="right-side-image"> 
+		        			</div>
+		        			<div style="width:40px; height:40px; margin-bottom: 40px">
+		        				<img src="assets/images/social.png" class="right-side-image"> 
+		        			</div>
+		        			<div style="width:40px; height:40px; margin-bottom: 40px">
+		        				<img src="assets/images/switch_off.jpg" class="right-side-image"> 
+		        			</div>
+		        		</div>	
+		        		
+		        	</div>	
+		        	
+		        	<div style="width: 100%; height: 30%; float: left; margin-top: 10px" >		
+			        	<div >
+			        		<div ng-repeat="item in items">
+							  <div  ng-click="clicked(item)" style="float: left">	
+							     <img src="assets/images/gap_Fotors.jpg" ng-src="assets/images/{{item}}" style="margin-right: 1px; width: 140px; display: block; -webkit-transform: rotate(90deg);">
+							  </div>
+							</div>  
+			        	</div>
+			        </div>	
+			   </div>     
+			    <div style="float:left; width: 30%; height:300px; margin-bottom: 40px; margin-left: 40px">
+			    	<div style="margin-left: 55px"> 
+			    		<h3><span class="label label-success" style="margin-bottom: 20px;">Fitting Room- 1234 </span></h3>
+			  		</div>
+			  		<img src="assets/images/fitting_room_1234.jpg" style="width: 300px; height: 300px"> 
+			  			<div style="margin-left: 45px"> 
+			    			<h5><span class="label label-default" style="margin-bottom: 20px;">Scan the Fitting Room From Your Gap App</span></h5>
+			  			</div>
+			  </div>     
+	      </div>
+	   </div>      
 </body>        	
