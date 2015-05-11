@@ -23,6 +23,7 @@ fitting.controller('FittingRoomCtrl', ['$scope', '$http',  '$location', '$filter
     }
     
    var url = '/scanning.json?barcode=' + $scope.rooom_barcode
+   console.log($location.search().barcode)
 
    var reload_modal_close =  function(){
        $scope.reload();

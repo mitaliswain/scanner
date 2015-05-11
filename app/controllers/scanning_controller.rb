@@ -4,11 +4,10 @@ class ScanningController < ApplicationController
   def index
       image_root = 'public/assets/images/'
      @dir_list = []
-      Dir.foreach(image_root) {|dir|  @dir_list << dir if (dir != '.' && dir != '..')  && (dir[0..4] == params[:barcode]) }
-      
+      Dir.foreach(image_root) {|dir|  @dir_list << dir if (dir != '.' && dir != '..')  && (dir.to_s.starts_with?(params[:barcode].to_s)) }
+            
       @dir_list = ['gap_Fotor.jpg'] if @dir_list.empty?
-      p @dir_list
-      
+
     respond_to do |format|
       format.html 
       format.json { render :json => @dir_list.to_json }
