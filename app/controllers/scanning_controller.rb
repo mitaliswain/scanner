@@ -7,7 +7,9 @@ class ScanningController < ApplicationController
       Dir.foreach(image_root) {|dir|  @dir_list << dir if (dir != '.' && dir != '..')  && (dir.to_s.starts_with?(params[:barcode].to_s)) }
             
       @dir_list = ['gap_Fotor.jpg'] if @dir_list.empty?
-
+      
+      @dir_list = @dir_list.sort
+      
     respond_to do |format|
       format.html 
       format.json { render :json => @dir_list.to_json }
