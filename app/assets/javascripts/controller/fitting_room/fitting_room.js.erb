@@ -38,9 +38,9 @@ fitting.controller('FittingRoomCtrl', ['$scope', '$http',  '$location', '$filter
 
         $http.get(url).success(function(data) {
             $scope.items = data;
-            if ($scope.clicked_photo == null) {
+            //if ($scope.clicked_photo == null) {
             	$scope.clicked_photo = data[0]
-			}
+			//}
         });
 
     };
