@@ -7,6 +7,12 @@ Rails.application.routes.draw do
     get '/destroy' ,  action: 'destroy'
  end
   
+  namespace :command do
+    get '/' ,  action: 'index' 
+    post '/' ,  action: 'create'
+    get '/destroy' ,  action: 'destroy'
+ end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
